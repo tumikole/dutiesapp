@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/javascript/index.js"></script>
+    <link rel="stylesheet" href="/javascript/style.css">
+
+    <title>dutiesapp</title>
+</head>
+<body>
+
+  
+
+
+    <div class="header">
+        
+        <form action="/"method="GET">
+          <div>
+          <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname" value="" required><br><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value="" required><br><br>
+          <label for="duties">Duties:</label><br>
+          <input type="text" id="duties" name="duties" value="" required><br><br>
+          <button type="submit" id="submitButton">✓Submit✓</button>
+          </div>
+        </form> 
+    </div>
+
+    <h1>Duty App</h1>
+
+    <table>
+      <tr>
+        <th>NAME</th>
+        <th>SURNAME</th>
+        <th>DUTIES</th>
+        <th class="done">✅ </th>
+
+      </tr>
+      <td>
+        <button class="edit">✍ </button>
+        <button class="delete">❌</button>     
+      </td>
+
+      <!-- <tr id="completed-tasks">
+        <li><input type="checkbox" checked><label>See the Doctor</label> -->
+
+
+    </table>
+
+</body>
+</html>
