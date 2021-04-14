@@ -4,11 +4,30 @@ function addHtmlTableRow() {
   cell = newRow.insertCell(0),
   cell = newRow.insertCell(1),
   cell = newRow.insertCell(2),
-  fname = document.getElementById("fname"),
-  lname = document.getElementById("lname"),
-  duties = document.getElementById("duties");
+  fname = document.getElementById("fname").value,
+  lname = document.getElementById("lname").value,
+  duties = document.getElementById("duties").value;
+
+  cell1.innerHTML = fname;
+  cell1.innerHTML = lname;
+  cell1.innerHTML = duties;
+
 }
 
+function selectRowToInput();
+
+{ 
+  var rindex,table = table.getElementById("table");
+for (var i = 0; i < table.row.length; i++)
+{
+  table.row[i].onclick = function()
+  {
+    rindex = this.rowindex;
+    console.log(rindex);
+  };
+}
+}
+selectRowToInput();
 
 
 
@@ -20,4 +39,4 @@ for (i = 0; i < closebtns.length; i++) {
     this.parentElement.style.display = 'none';
   });
 }
-
+ 
