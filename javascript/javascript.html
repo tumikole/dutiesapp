@@ -10,47 +10,35 @@
     <title>dutiesapp</title>
 </head>
 <body>
+     <main class="main">
+     
+       
+       <form id="inviteForm">
 
-  
+  <h1>Duty App</h1>
 
-
-    <div class="header">
-   
-      <h1>Duty App</h1>
-        
-        <form action="/"method="GET">
-          <div>
-          <label for="fname">First name:</label><br>
-          <input type="text" id="fname" name="fname" value="" required><br><br>
-          <label for="lname">Last name:</label><br>
-          <input type="text" id="lname" name="lname" value="" required><br><br>
-          <label for="duties">Duties:</label><br>
-          <input type="text" id="duties" name="duties" value="" required><br><br>
-          <button type="submit" id="submitButton">✓Submit✓</button>
-          </div>
-        </form> 
-    </div>
+            <input type="text" name="name" placeholder="">
+            <input type="text" name="name" placeholder="">
+            <input type="text" name="name" placeholder="">
 
 
-    <table id="table">
-      <tr>
-        <th>NAME</th>
-        <th>SURNAME</th>
-        <th>DUTIES</th>
-        
-      </tr>
-      <td>
-      </td>
-      
-      <!-- <tr id="completed-tasks">
-        <li><input type="checkbox" checked><label>See the Doctor</label> -->
+            <button type="submit" name="submit" value="submit">Submit</button>
+ </form>
+
+<ul id="invitedList">
+
+       <li>
+             <span>tumisang</span>
+             <label>confirmed<input type="checkbox"></label>
+             <button>edit</button>
+             <button>remove</button>
+     </li>
+
+
+</ul>
+
+        </main>
           
-          
-        </table>
-        <button class="completed">done</button>
-        <button class="edit">✍edit</button>
-        <button class="delete">delete</button>     
-        
       </body>
       </html>
 

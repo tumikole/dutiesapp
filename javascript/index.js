@@ -1,42 +1,75 @@
-function addHtmlTableRow() {
-  var table = document.getElementById("table"),
-  newRow = table.insert(table.length),
-  cell = newRow.insertCell(0),
-  cell = newRow.insertCell(1),
-  cell = newRow.insertCell(2),
-  fname = document.getElementById("fname").value,
-  lname = document.getElementById("lname").value,
-  duties = document.getElementById("duties").value;
+const form = document.querySelector('#inviteForm');
+const input = document.querySelector('input');
+const ul = document.querySelector('#invitedList');
 
-  cell1.innerHTML = fname;
-  cell1.innerHTML = lname;
-  cell1.innerHTML = duties;
+function createLi() {
+  const li = document.createElement('li');
+  const span = document.createElement('span');
+  span.textContent = input.value;
+  const label = document.createElement('label');
+  label.textContent = 'confirmed';
+  const checkbox = document.createElement('input');
+checkbox.type = 'checkbox';
+const editBtn = document.createElement('button');
+editBtn.textContent = 'edit';
+const removeBtn = document.createElement('button');
+removeBtn.textContent = 'remove';
 
+li.appendChild(span);
+li.appendChild(label);
+label.appendChild(checkbox);
+li.appendChild(editBtn);
+li.appendChild(removeBtn);
+
+return li;
 }
 
-function selectRowToInput();
+form.addEventListener('submit'), (event) => {
+  event.preventDefault();
 
-{ 
-  var rindex,table = table.getElementById("table");
-for (var i = 0; i < table.row.length; i++)
-{
-  table.row[i].onclick = function()
-  {
-    rindex = this.rowindex;
-    console.log(rindex);
-  };
-}
-}
-selectRowToInput();
+  const li = createLi();
 
+  if(input.value === '') {
+    alert('dfsdfsdfdfdf');
+  }else {
+    URL.appendChild(li);
+  }
+};
 
+ul.addEventListener('change', (event) => {
+  const checkbox = even.target;
+  const checked = checkbox.checked;
+  const li = checkbox.parentNode.parentNode;
+  if(checked) {
+    li.className = 'responded';
+  }else {
+    li.className = '';
+  }
+});
 
-var closebtns = document.getElementsByClassName("close");
-var i;
+ul.addEventLIstener('click', (event) => {
+  if(event.target.tagname === 'BUTTON') {
+    const button = event.target;
+    const li = button.parentNode;
+    const ul = li.parentNode;
+    if(button.textContent === 'remove') {
+      ul.removeChild(li);
+    }else if(button.textContent === 'edit') {
+      const span = li.firstElementChild;
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.value = span.textContent;
+      li.insertBefore(input, span);
+      li.removeChild(span);
+      button.textContent = 'save';
 
-for (i = 0; i < closebtns.length; i++) {
-  closebtns[i].addEventListener("click", function() {
-    this.parentElement.style.display = 'none';
-  });
-}
- 
+    }else if(button.textContent === 'save') {
+      const input = li.firstElementChild;
+      const span = document.createElement('span');
+      span.textContent = input.value;
+      li.insertBefore(span, input);
+      li.removeChild(input);
+      button.textContent = 'edit';
+    }
+  }
+})
