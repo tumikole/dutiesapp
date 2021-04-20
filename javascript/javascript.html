@@ -10,34 +10,53 @@
     <title>dutiesapp</title>
 </head>
 <body>
-     <main class="main">
      
        
-       <form id="inviteForm">
+       <form action="/action_page.php">
 
-  <h1>Duty App</h1>
+              <h1>Duty App</h1>
+              <input type="text" id="fname" name="fname" placeholder="Name" required>
+              <br>
+              <input type="text" id="lname" placeholder="Surname" required>
+              <br>
+              <input type="text" id="duties" name="duties" placeholder="Duties" required>
+              <br>
+              <input type="submit" id="addRow" onclick="addRow()" value="Submit">
+              
+            </form> 
 
-            <input type="text" name="name" placeholder="">
-            <input type="text" name="name" placeholder="">
-            <input type="text" name="name" placeholder="">
+            <br>
+
+ <table id="table">
+
+<tr>
+       <th>Name</th>
+       <th>Surname</th>
+       <th>Duties</th>
+             
+</tr>
+
+       
+ <tr>
+          <td>Samuel</td>
+          <td>Ramollo</td>
+          <td>Javascript</td>
+         
+</tr>
 
 
-            <button type="submit" name="submit" value="submit">Submit</button>
- </form>
-
-<ul id="invitedList">
-
-       <li>
-             <span>tumisang</span>
-             <label>confirmed<input type="checkbox"></label>
-             <button>edit</button>
-             <button>remove</button>
-     </li>
 
 
-</ul>
+</table>
 
-        </main>
+
+<!-- <input type="submit" id="aditRow" onclick="aditRow()" value="edit">
+<input type="submit" id="deleteRow" onclick="_deleteRow()" value="delete">   -->
+
+
+
+
+ 
           
       </body>
       </html>

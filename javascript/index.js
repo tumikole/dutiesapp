@@ -1,75 +1,46 @@
-const form = document.querySelector('#inviteForm');
-const input = document.querySelector('input');
-const ul = document.querySelector('#invitedList');
+function addRow() {
+      
+    var table = document.getElementById("table");
+      
+    var table = document.createElement('TABLE');
+    table.border='1';
+    
+    var tableBody = document.createElement('TBODY');
+    table.appendChild(tableBody);
+      
+    for (var i=0; i<3; i++){
+       var tr = document.createElement('TR');
+       tableBody.appendChild(tr);
+       
+       for (var j=0; j<4; j++){
+           var td = document.createElement('TD');
+           td.width='75';
+           td.appendChild(document.createTextNode("Cell " + i + "," + j));
+           tr.appendChild(td);
+       }
+    }
+    table.appendChild(table);
+    
+}
+ 
 
-function createLi() {
-  const li = document.createElement('li');
-  const span = document.createElement('span');
-  span.textContent = input.value;
-  const label = document.createElement('label');
-  label.textContent = 'confirmed';
-  const checkbox = document.createElement('input');
-checkbox.type = 'checkbox';
-const editBtn = document.createElement('button');
-editBtn.textContent = 'edit';
-const removeBtn = document.createElement('button');
-removeBtn.textContent = 'remove';
 
-li.appendChild(span);
-li.appendChild(label);
-label.appendChild(checkbox);
-li.appendChild(editBtn);
-li.appendChild(removeBtn);
 
-return li;
+function addRow() {
+          
+    var fname = document.getElementById("fname");
+    var lname = document.getElementById("lname");
+    var duties = document.getElementById("duties");
+    var table = document.getElementById("table");
+ 
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+ 
+    row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="deleteRow(this)">';
+    row.insertCell(1).innerHTML= fname.value;
+    row.insertCell(2).innerHTML= lname.value;
+    row.insertCell(2).innerHTML= duties.value;
+
+ 
 }
 
-form.addEventListener('submit'), (event) => {
-  event.preventDefault();
-
-  const li = createLi();
-
-  if(input.value === '') {
-    alert('dfsdfsdfdfdf');
-  }else {
-    URL.appendChild(li);
-  }
-};
-
-ul.addEventListener('change', (event) => {
-  const checkbox = even.target;
-  const checked = checkbox.checked;
-  const li = checkbox.parentNode.parentNode;
-  if(checked) {
-    li.className = 'responded';
-  }else {
-    li.className = '';
-  }
-});
-
-ul.addEventLIstener('click', (event) => {
-  if(event.target.tagname === 'BUTTON') {
-    const button = event.target;
-    const li = button.parentNode;
-    const ul = li.parentNode;
-    if(button.textContent === 'remove') {
-      ul.removeChild(li);
-    }else if(button.textContent === 'edit') {
-      const span = li.firstElementChild;
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.value = span.textContent;
-      li.insertBefore(input, span);
-      li.removeChild(span);
-      button.textContent = 'save';
-
-    }else if(button.textContent === 'save') {
-      const input = li.firstElementChild;
-      const span = document.createElement('span');
-      span.textContent = input.value;
-      li.insertBefore(span, input);
-      li.removeChild(input);
-      button.textContent = 'edit';
-    }
-  }
-})
